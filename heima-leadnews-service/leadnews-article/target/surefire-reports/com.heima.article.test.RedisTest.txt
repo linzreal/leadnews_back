@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: com.heima.article.test.RedisTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.265 s <<< FAILURE! - in com.heima.article.test.RedisTest
+testList  Time elapsed: 0.265 s  <<< ERROR!
+org.springframework.data.redis.RedisSystemException: Error in execution; nested exception is io.lettuce.core.RedisCommandExecutionException: NOAUTH Authentication required.
+	at com.heima.article.test.RedisTest.testList(RedisTest.java:22)
+Caused by: io.lettuce.core.RedisCommandExecutionException: NOAUTH Authentication required.
+

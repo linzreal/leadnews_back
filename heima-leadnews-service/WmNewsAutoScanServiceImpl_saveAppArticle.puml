@@ -1,0 +1,71 @@
+@startuml
+participant Actor
+Actor -> WmNewsAutoScanServiceImpl : saveAppArticle
+activate WmNewsAutoScanServiceImpl
+create ArticleDto
+WmNewsAutoScanServiceImpl -> ArticleDto : new
+activate ArticleDto
+ArticleDto --> WmNewsAutoScanServiceImpl
+deactivate ArticleDto
+WmNewsAutoScanServiceImpl -> WmNews : getType
+activate WmNews
+WmNews --> WmNewsAutoScanServiceImpl
+deactivate WmNews
+WmNewsAutoScanServiceImpl -> ApArticle : setLayout
+activate ApArticle
+ApArticle --> WmNewsAutoScanServiceImpl
+deactivate ApArticle
+WmNewsAutoScanServiceImpl -> WmNews : getChannelId
+activate WmNews
+WmNews --> WmNewsAutoScanServiceImpl
+deactivate WmNews
+WmNewsAutoScanServiceImpl -> WmChannel : getName
+activate WmChannel
+WmChannel --> WmNewsAutoScanServiceImpl
+deactivate WmChannel
+WmNewsAutoScanServiceImpl -> ApArticle : setChannelName
+activate ApArticle
+ApArticle --> WmNewsAutoScanServiceImpl
+deactivate ApArticle
+WmNewsAutoScanServiceImpl -> WmNews : getUserId
+activate WmNews
+WmNews --> WmNewsAutoScanServiceImpl
+deactivate WmNews
+WmNewsAutoScanServiceImpl -> ApArticle : setAuthorId
+activate ApArticle
+ApArticle --> WmNewsAutoScanServiceImpl
+deactivate ApArticle
+WmNewsAutoScanServiceImpl -> WmNews : getUserId
+activate WmNews
+WmNews --> WmNewsAutoScanServiceImpl
+deactivate WmNews
+WmNewsAutoScanServiceImpl -> WmUser : getName
+activate WmUser
+WmUser --> WmNewsAutoScanServiceImpl
+deactivate WmUser
+WmNewsAutoScanServiceImpl -> ApArticle : setAuthorName
+activate ApArticle
+ApArticle --> WmNewsAutoScanServiceImpl
+deactivate ApArticle
+WmNewsAutoScanServiceImpl -> WmNews : getArticleId
+activate WmNews
+WmNews --> WmNewsAutoScanServiceImpl
+deactivate WmNews
+WmNewsAutoScanServiceImpl -> WmNews : getArticleId
+activate WmNews
+WmNews --> WmNewsAutoScanServiceImpl
+deactivate WmNews
+WmNewsAutoScanServiceImpl -> ApArticle : setId
+activate ApArticle
+ApArticle --> WmNewsAutoScanServiceImpl
+deactivate ApArticle
+WmNewsAutoScanServiceImpl -> ApArticle : setCreatedTime
+activate ApArticle
+ApArticle --> WmNewsAutoScanServiceImpl
+deactivate ApArticle
+WmNewsAutoScanServiceImpl -> IArticleClient : saveArticle
+activate IArticleClient
+IArticleClient --> WmNewsAutoScanServiceImpl
+deactivate IArticleClient
+return
+@enduml
